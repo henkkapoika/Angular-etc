@@ -1,27 +1,19 @@
+import { useState } from 'react'
 
-const Hello = ({ name, age }) => {
-  const bornYear = () => new Date().getFullYear() - age
-
+const App = () => {
+  const [ counter, setCounter ] = useState(0)
+  
   return (
     <div>
-      <p>Hello {name}, are you {age} years old</p>
-      <p>So you were probably born {bornYear()}</p>
+      <div>{counter}</div>
+      <button onClick={() => setCounter(counter + 1)}>
+        plus
+      </button>
+      <button onClick={() => setCounter(0)}>
+        zero
+      </button>
     </div>
   )
 }
-
-
-const App = () => {
-  const nimi = 'Pekka'
-  const ika = 10
-  return (
-    <div>
-    <h1>Greetings</h1>
-    <Hello name="Maya" age={26 + 10} />
-    <Hello name={nimi} age={ika} />
-  </div>
-  );
-}
-
 
 export default App
